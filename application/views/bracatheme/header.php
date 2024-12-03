@@ -3,7 +3,7 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
-          <h1 class="logo me-auto me-lg-0"><a href="<?php echo base_url('main');?>"><img src="<?php echo base_url('assets/img/logolenys.png');?>"></a></h1>
+          <h1 class="logo me-auto me-lg-0"><a href="<?php echo base_url('klinik_kecantikan_tangerang');?>"><img src="<?php echo base_url('assets/img/logolenys.png');?>"></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 <?php 
