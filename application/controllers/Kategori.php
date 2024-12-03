@@ -83,9 +83,13 @@ class Kategori extends CI_Controller {
 			$config['total_rows'] = $jumlah;
 			$config['per_page'] = 8; 	
 			
-			$data['title'] = "Detail Sub Produk $row[nama_kategori]";
-			$data['description'] = description();
-			$data['keywords'] = keywords();
+			$proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
+            $datas = array('record' => $proses);
+			$data['title'] = "$row[nama_kategori] Klinik Kecantikan Di Tangerang - Leny Skin Care";
+			$data['description'] = $proses['meta_deskripsi'];
+		    $data['keywords'] = $row['nama_kategori'] .' '. $proses['meta_keyword'];
+			$data['url'] = base_url($this->uri->segment('2'));
+			$data['image'] = base_url('assets/img/logolenys.png');
 			$data['rows'] = $row;
 			$data['id'] = $this->uri->segment('3');
 			$data['id3'] = $config['total_rows'];
