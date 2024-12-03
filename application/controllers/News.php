@@ -42,12 +42,19 @@ class News extends CI_Controller {
 	public function index($id=null){
 		$query = $this->model_utama->view_join_two('berita','users','kategori','username','id_kategori',array('judul_seo' => $this->uri->segment(2)),'id_berita','DESC',0,1);
 		if ($query->num_rows()<=0){
-			redirect('main');
+			redirect('klinik_kecantikan_tangerang');
 		}else{
 			$row = $query->row_array();
+
+			$proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
+            $datas = array('record' => $proses);
 			$data['title'] = cetak($row['judul']);
-			$data['description'] = cetak_meta($row['isi_berita'],0,500);
-			$data['keywords'] = cetak($row['tag']);
+			$data['description'] = $proses['meta_deskripsi'];
+		    $data['keywords'] = 'Artikel, tips dan trik, '.$proses['meta_keyword'];
+			$data['url'] = base_url($this->uri->segment('1'));
+			$data['image'] = base_url('asset/foto/'.$row['gambar']);
+
+		//	$data['keywords'] = cetak($row['tag']);
 			$data['rows'] = $row;
 			$sosmed = $this->model_utama->view('identitas')->row_array();
 			$pecahd = explode(",", $sosmed['facebook']);
@@ -68,7 +75,7 @@ class News extends CI_Controller {
             );
 
             $cap = create_captcha($vals);
-            $data['image'] = $cap['image'];
+            $data['imagecap'] = $cap['image'];
             $this->session->set_userdata('mycaptcha', $cap['word']);
 			$this->template->load(template().'/template',template().'/detailberita',$data);
 		}
