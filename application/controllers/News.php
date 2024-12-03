@@ -51,8 +51,8 @@ class News extends CI_Controller {
 			$data['title'] = cetak($row['judul']);
 			$data['description'] = $proses['meta_deskripsi'];
 		    $data['keywords'] = 'Artikel, tips dan trik, '.$proses['meta_keyword'];
-			$data['url'] = base_url($this->uri->segment('2'));
-			$data['image'] = base_url('asset/foto/'.$row['gambar']);
+			$data['url'] = base_url('news/'.$this->uri->segment('2'));
+			$data['image'] = base_url('asset/foto_berita/'.$row['gambar']);
 
 		//	$data['keywords'] = cetak($row['tag']);
 			$data['rows'] = $row;
