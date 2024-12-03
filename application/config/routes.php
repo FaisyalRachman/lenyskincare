@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route = array(
-    'default_controller' => 'main',
+    'default_controller' => 'klinik_kecantikan_tangerang',
     'main' => 'main',
     'aboutims' => 'aboutims',
     'produk' => 'produk',
@@ -82,6 +82,7 @@ $route = array(
     'lowongan' => 'lowongan',
     'landing' => 'landing',
     'polling' => 'polling',
+    'visitlokasi' => 'visitlokasi',
     'streaming' => 'streaming',
     'userlogin' => 'userlogin',
      'tag' => 'tag',
