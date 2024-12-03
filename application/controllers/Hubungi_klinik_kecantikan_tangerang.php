@@ -40,7 +40,7 @@ class Hubungi_klinik_kecantikan_tangerang extends CI_Controller {
         );
 
         $cap = create_captcha($vals);
-        $data['image'] = $cap['image'];
+        $data['imagecap'] = $cap['image'];
         $this->session->set_userdata('mycaptcha', $cap['word']);
 		$this->template->load(template().'/template',template().'/hubungi',$data);
 	}
