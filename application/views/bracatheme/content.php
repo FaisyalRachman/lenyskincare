@@ -18,7 +18,7 @@ $sosmed = $this->model_utama->view('identitas')->row_array();
      
 
             
-            <iframe src="<?php echo base_url();?>/karir/visitlokasi" width="100%;" height="100%"></iframe>
+            <iframe src="<?php echo base_url();?>karir/visitlokasi" width="100%;" height="100%"></iframe>
             
           
            
