@@ -18,13 +18,13 @@ $this->uri->segment(1)=='hubungi' ?  $g = 'active' : "no";
  ?>
           <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-              <li><a class="nav-link scrollto <?php echo $a; ?>" href="<?php echo base_url('main');?>">Beranda</a></li>
+              <li><a class="nav-link scrollto <?php echo $a; ?>" href="<?php echo base_url('klinik_kecantikan_tangerang');?>">Beranda</a></li>
               <li><a class="nav-link scrollto <?php echo $b; ?>" href="<?php echo base_url('treatment');?>">Treatment</a></li>
               <li><a class="nav-link scrollto <?php echo $c; ?>" href="<?php echo base_url('productlenyskincare');?>">Produk</a></li>
-              <li><a class="nav-link scrollto <?php echo $d; ?>" href="<?php echo base_url('location');?>">Lokasi</a></li>
+              <li><a class="nav-link scrollto <?php echo $d; ?>" href="<?php echo base_url('lokasi_klinik_kecantikan_tangerang');?>">Lokasi</a></li>
                  
                <li><a class="nav-link scrollto get-started-btn <?php echo $f; ?>" href="<?php echo base_url('product/promolenyskincare');?>">PROMO</a></li>
-               <li><a class="nav-link scrollto get-started-btn2 <?php echo $g ?>" href="<?php echo base_url('hubungi');?>">Hubungi Kami</a></li>
+               <li><a class="nav-link scrollto get-started-btn2 <?php echo $g ?>" href="<?php echo base_url('hubungi_klinik_kecantikan_tangerang');?>">Hubungi Kami</a></li>
                <li></li>
                <li></li>
                <li> <a class="nav-link scrollto" href="<?php echo base_url('userlogin');?>">
