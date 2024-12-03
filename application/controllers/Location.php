@@ -22,12 +22,14 @@ class Location extends CI_Controller {
 			}else{
 				$dari = $this->uri->segment('4');
 			}
-			$data['title'] = "Lokasi Cabang Leny Skin Care";
-		$data['description'] = description();
-		$data['keywords'] = keywords();
-	    $proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
-		     $data = array('record' => $proses);
-			 $data['no_telp'] = no_telp();
+			$proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
+            $datas = array('record' => $proses);
+			$data['title'] = "Lokasi Klinik Kecantikan Di Tangerang - Leny Skin Care";
+			$data['description'] = $proses['meta_deskripsi'];
+		    $data['keywords'] = 'Lokasi '. $proses['meta_keyword'];
+			$data['url'] = base_url($this->uri->segment('1'));
+			$data['image'] = base_url('assets/img/logolenys.png');
+	    	 $data['no_telp'] = no_telp();
 			 $data['email'] = email();
 			$this->pagination->initialize($config);
 			$this->template->load(template().'/template',template().'/location',$data);
