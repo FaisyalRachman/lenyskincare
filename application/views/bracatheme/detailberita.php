@@ -2,8 +2,9 @@
 <div id="cta" class="cta" style="background-image:url(<?php echo base_url('assets/img/lokasi_lenyskincare.png'); ?>);background-position: center;background-size: cover;">
  	
 			 <div class="row">
-			
+			 <img class="responsive" src="<?= base_url('asset/foto_berita/').$rows['gambar']?>">
  			<div class="col-lg-12 icon-boxes flex-column justify-content-center" style="padding:1px 90px;">
+				
  				<h2 style="font-size:1.8vw;font-family: Roboto, sans-serif !important;font-weight:bold"><b><?php echo $rows['judul']; ?></b></h2>
  				<p style="font-size:2vw;font-family: Roboto, sans-serif !important;"><?php echo $rows['isi_berita']; ?></p>
 
