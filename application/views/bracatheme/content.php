@@ -30,7 +30,7 @@ $sosmed = $this->model_utama->view('identitas')->row_array();
 
         <div class="text-center title">
           <h2 style="font-family:Century Gothic;font-weight:500 !important;font-size:1.8em;color:#555">ARTIKEL</h2>
-          <p style="font-family:Century Gothic;font-size:1.2em;">Temukan Tips & Informasi Menarik Seputar Kecantikan</p>
+          <p style="font-family:Century Gothic;font-size:1.3em;">Temukan Tips & Informasi Menarik Seputar Kecantikan</p>
           <div class="row">
           <div class="col-lg-2">
 </div>
@@ -54,8 +54,8 @@ $sosmed = $this->model_utama->view('identitas')->row_array();
             ?>
           <div class="col-lg-3">
         
-          <p style="text-align:left!important;font-family:century gothic;color:#8B6FB9 !important;font-weight:500;font-size:1.3em !important;"> <?php echo $jdl;?> <small style="font-size:0.7em !important;"><i>(<?php echo $gbr['tanggal'];?><?php echo $gbr['jam'];?>)</i></small></p>
-              <p style="text-align:left;font-family:century gothic;font-size:1.0em;color:#888;"><img src="<?php echo base_url('asset/foto_berita/'); ?><?php echo $gbr['gambar'];?>" style="width:100%"><?php echo $isi;?>... <a href="<?php echo base_url('news/');?><?php echo $gbr['judul_seo'];?>"><span style="color:#8B6FB9">selengkapnya <i class="fa fa-newspaper"></i></span></a></p>
+          <p style="text-align:left!important;font-family:century gothic;color:#8B6FB9 !important;font-weight:bold;font-size:1.2em !important;"> <?php echo $jdl;?> <small style="font-size:0.6em !important;"><i>(<?php echo $gbr['tanggal'];?><?php echo $gbr['jam'];?>)</i></small></p>
+              <p style="text-align:left;font-family:century gothic;font-size:1.0em;color:#888;"><img src="<?php echo base_url('asset/foto_berita/'); ?><?php echo $gbr['gambar'];?>" style="width:100%"><?php echo $isi;?>... <a href="<?php echo base_url('news/');?><?php echo $gbr['judul_seo'];?>"><span style="color:#776FB9" font-weight="bold">selengkapnya <i class="fa fa-newspaper"></i></span></a></p>
            
 </div>
 <?php } ?>
@@ -108,7 +108,7 @@ $sosmed = $this->model_utama->view('identitas')->row_array();
 <div class="col-lg-4 ">
 </div>
           <div class="col-lg-4 d-flex justify-content-center align-items-center">
-          <a href="<?php echo base_url('hubungi');?>" class="details-link" title="JOIN US"><label style="font-weight:100 !important;font-family:Century Gothic;font-size:1.5em;background:#fff;border:1px #c9c9c9 solid;box-shadow:1px 0px 3px #999; margin-top:200px;padding:4px 23px 4px 23px;border-radius:32px;color:#676;" class="text-center">Gratis Konsultasi</label></a>
+          <a href="<?php echo base_url('hubungi_klinik_kecantikan_tangerang');?>" class="details-link" title="JOIN US"><label style="font-weight:100 !important;font-family:Century Gothic;font-size:1.5em;background:#fff;border:1px #c9c9c9 solid;box-shadow:1px 0px 3px #999; margin-top:200px;padding:4px 23px 4px 23px;border-radius:32px;color:#676;" class="text-center">Gratis Konsultasi</label></a>
 </div>    
 <div class="col-lg-4">
 </div>       
