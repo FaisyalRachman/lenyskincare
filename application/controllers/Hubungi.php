@@ -15,9 +15,13 @@ class Hubungi extends CI_Controller {
 		$query = $this->model_utama->view_where('mod_alamat',array('id_alamat' => 1));
 		$data['iden'] = $this->model_utama->view_where('identitas',array('id_identitas' => 1))->row_array();
 		$row = $query->row_array();
-		$data['title'] = 'Berlangganan di Leny Skin Care';
-		$data['description'] = 'Silahkan Mengisi Form Dibawah ini untuk menghubungi kami';
-		$data['keywords'] = 'hubungi, kontak, kritik, saran, pesan';
+		$proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
+		$datas = array('record' => $proses);
+		$data['title'] = "Hubungi Klinik Kecantikan Di Tangerang - Leny Skin Care";
+		$data['description'] = $proses['meta_deskripsi'];
+		$data['keywords'] = 'hubungi '. $proses['meta_keyword'];
+		$data['url'] = base_url($this->uri->segment('1'));
+		$data['image'] = base_url('assets/img/logolenys.png');
 		$data['rows'] = $row;
 		$data['no_telp'] = no_telp();
 		$data['email'] = email();
