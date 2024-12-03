@@ -21,11 +21,16 @@ class Treatment extends CI_Controller {
 			}else{
 				$dari = $this->uri->segment('4');
 			}
-			$data['title'] = "Treatment Leny Skin Care";
-			$data['description'] = description();
-		$data['keywords'] = keywords();
-		$data['no_telp'] = no_telp();
-		$data['email'] = email();
+			$proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
+            $datas = array('record' => $proses);
+			$data['title'] = "Treatment Klinik Kecantikan Di Tangerang - Leny Skin Care";
+			$data['description'] = $proses['meta_deskripsi'];
+		    $data['keywords'] = 'treatment '.$proses['meta_keyword'];
+			$data['url'] = base_url($this->uri->segment('1'));
+			$data['image'] = base_url('assets/img/logolenys.png');
+
+		   $data['no_telp'] = no_telp();
+		   $data['email'] = email();
 			if (is_numeric($dari)) {
 			
 				$data['album'] = $this->model_utama->view_where_ordering_limit('album',array('aktif' => 'Y'),'id_album','DESC',$dari,$config['per_page']);
