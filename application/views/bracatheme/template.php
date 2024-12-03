@@ -5,12 +5,11 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <meta property="og:title" content="<?= $title ?>" /> 
+  <meta property="og:title" content="<?= $title ?>"> 
   <meta property="og:description" content="<?= $description ?>">
   <meta property="og:keyword" content="<?= $keywords ?>">
   <meta property="og:url" content="<?= $url ?>">
   <meta property="og:image" content="<?= $image ?>">
-
   <!-- Favicons -->
   <link href="<?= base_url('assets/img/lenyskincare_favicon.png') ?>" rel="icon">
   <link href="<?= base_url('assets/img/lenyskincare_icon.png') ?>" rel="apple-touch-icon">
@@ -81,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ?>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <header id="header" class="fixed-top">
   <?php include "header.php"; ?>
   </header><!-- End Header -->
 
