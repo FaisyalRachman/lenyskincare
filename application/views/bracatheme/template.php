@@ -5,9 +5,11 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title><?= $title ?></title>
+  <meta property="og:title" content="<?= $title ?>" /> 
   <meta property="og:description" content="<?= $description ?>">
-  <meta content="" name="keywords">
+  <meta property="og:keyword" content="<?= $keywords ?>">
+  <meta property="og:url" content="<?= $url ?>">
+  <meta property="og:image" content="<?= $image ?>">
 
   <!-- Favicons -->
   <link href="<?= base_url('assets/img/lenyskincare_favicon.png') ?>" rel="icon">
@@ -31,7 +33,7 @@
   <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: KnightOne - v4.7.0
+  * Template Name: KnightOne
   * Engine Framework : Codeigniter
   * Development By : www.sookawebtarakan.com (faisyal rachman 082155573572) Jl. Yos Sudarso No.43 RT.07 Selumit , Tarakan Tengah - Kota Tarakan
   * Author: BootstrapMade.com
@@ -99,8 +101,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       include "footer.php";
       ?>
   </footer><!-- End Footer -->
-
+<!--
   <div id="preloader"></div>
+  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <a href="https://api.whatsapp.com/send?phone='<?php echo no_telp(); ?>'&text=Hi%21%20saya tertarik untik treatment di Leny Skincare. Mohon informasi lebih lanjutnya ya. Terima Kasih :)." class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
