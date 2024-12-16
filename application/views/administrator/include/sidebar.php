@@ -31,6 +31,10 @@ $act1 = 'active';
   $act10 = 'active';
 }elseif($this->uri->segment(2) == "tambah_kategoriproduct"||$this->uri->segment(2) == "edit_kategoriproduct"){
   $act11 = 'active';
+}elseif($this->uri->segment(2) == "tambah_subkategoriproduct"||$this->uri->segment(2) == "edit_subkategoriproduct"){
+  $act12 = 'active';
+}elseif($this->uri->segment(2) == "bukutamu"||$this->uri->segment(2) == "bukutamu"){
+  $act13 = 'active';
 }else{
   $act1 = '';
 }
@@ -99,7 +103,7 @@ $act1 = 'active';
           }
               */
           if ($cek == 1 or $this->session->level == 'admin' || $this->session->level == 'staf') {
-            echo "<li class='nav-item'><a class='nav-link ".$act10."".($this->uri->segment(2) == "albumslide" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/albumslide'><i class='fas fa-newspaper nav-icon text-success'></i> <p>Slide</p></a></li>";
+            echo "<li class='nav-item'><a class='nav-link ".$act10."".($this->uri->segment(2) == "albumslide" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/albumslide'><i class='fas fa-image nav-icon text-success'></i> <p>Slide</p></a></li>";
           }
         
           //$cek = $this->model_app->umenu_akses("kategoriberita", $this->session->id_session);
@@ -107,8 +111,8 @@ $act1 = 'active';
             echo "<li class='nav-item'><a class='nav-link ".$act9."".($this->uri->segment(2) == "kategoritreatment" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/kategoritreatment'><i class='fas fa-columns nav-icon text-success'></i> <p>Treatment</p></a></li>";
             echo "<li class='nav-item'><a class='nav-link ".$act3."".($this->uri->segment(2) == "subkategori" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/subkategori'><i class='fas fa-columns nav-icon text-success'></i> <p>Sub Treatment</p></a></li>";
               echo "<li class='nav-item'><a class='nav-link ".$act11."".($this->uri->segment(2) == "kategoriproduct" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/kategoriproduct'><i class='fas fa-columns nav-icon text-success'></i> <p>Product</p></a></li>";
-             echo "<li class='nav-item'><a class='nav-link ".$act11."".($this->uri->segment(2) == "subkategoriproduct" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/subkategoriproduct'><i class='fas fa-columns nav-icon text-success'></i> <p>Sub Product</p></a></li>";
-             echo "<li class='nav-item'><a class='nav-link ".$act11."".($this->uri->segment(2) == "kategoriproduct" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/bukutamu'><i class='fas fa-columns nav-icon text-success'></i> <p>Buku Tamu (Hubungi)</p></a></li>";
+             echo "<li class='nav-item'><a class='nav-link ".$act12."".($this->uri->segment(2) == "subkategoriproduct" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/subkategoriproduct'><i class='fas fa-columns nav-icon text-success'></i> <p>Sub Product</p></a></li>";
+             echo "<li class='nav-item'><a class='nav-link ".$act13."".($this->uri->segment(2) == "bukutamu" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/bukutamu'><i class='fas fa-columns nav-icon text-success'></i> <p>Buku Tamu (Hubungi)</p></a></li>";
             // }
           $cek = $this->model_app->umenu_akses("subkategori", $this->session->id_session);
          
@@ -151,7 +155,7 @@ $act1 = 'active';
           <?php
         //  $cek = $this->model_app->umenu_akses("mitra", $this->session->id_testimoni);
           if ($cek == 1 or $this->session->level == 'admin' || $this->session->level == 'staf') {
-            echo "<li class='nav-item'><a class='nav-link ".$act7."".($this->uri->segment(2) == "mitra" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/mitra'><i class='fas fa-chalkboard-teacher nav-icon text-success'></i> <p>Lokasi Cabang</p></a></li>";
+            echo "<li class='nav-item'><a class='nav-link ".$act7."".($this->uri->segment(2) == "mitra" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/mitra'><i class='fas fa-building nav-icon text-success'></i> <p>Lokasi Cabang</p></a></li>";
           }
 
   ?>
@@ -217,6 +221,88 @@ $act1 = 'active';
           // if ($cek == 1 or $this->session->level == 'admin') {
           //   echo "<li class='nav-item'><a class='nav-link' href='" . base_url() . $this->uri->segment(1) . "/manajemenmodul'><i class='far fa-circle nav-icon text-success'></i> <p>Manajemen Modul</p></a></li>";
           // }
+          ?>
+      
+      <?php  }   ?>
+      <li class="nav-header">SEO META TAG</li>
+       <?php if ($this->session->level == 'admin' or $this->session->level == 'staf') {?>
+ 
+          <?php
+          $cek = $this->model_app->umenu_akses("manajemenuser", $this->session->id_session);
+          if ($cek == 1 or $this->session->level == 'admin' or $this->session->level == 'staf') {
+            echo "<li class='nav-item'><a class='nav-link ".$act8."".($this->uri->segment(2) == "treatmentpage" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/treatmentpage'><i class='fas fa-tags nav-icon text-success'></i> <p>Treatment Page</p></a></li>";
+          }
+
+          // $cek = $this->model_app->umenu_akses("manajemenmodul", $this->session->id_session);
+          // if ($cek == 1 or $this->session->level == 'admin') {
+          //   echo "<li class='nav-item'><a class='nav-link' href='" . base_url() . $this->uri->segment(1) . "/manajemenmodul'><i class='far fa-circle nav-icon text-success'></i> <p>Manajemen Modul</p></a></li>";
+          // }
+          ?>
+      
+      <?php  }   ?>
+      <?php if ($this->session->level == 'admin' or $this->session->level == 'staf') {?>
+ 
+          <?php
+          $cek = $this->model_app->umenu_akses("manajemenuser", $this->session->id_session);
+          if ($cek == 1 or $this->session->level == 'admin' or $this->session->level == 'staf') {
+            echo "<li class='nav-item'><a class='nav-link ".$act8."".($this->uri->segment(2) == "productpage" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/productpage'><i class='fas fa-tags nav-icon text-success'></i> <p>Product Page</p></a></li>";
+          }
+
+          ?>
+      
+      <?php  }   ?>
+      <?php if ($this->session->level == 'admin' or $this->session->level == 'staf') {?>
+ 
+          <?php
+          $cek = $this->model_app->umenu_akses("manajemenuser", $this->session->id_session);
+          if ($cek == 1 or $this->session->level == 'admin' or $this->session->level == 'staf') {
+            echo "<li class='nav-item'><a class='nav-link ".$act8."".($this->uri->segment(2) == "lokasipage" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/lokasipage'><i class='fas fa-tags nav-icon text-success'></i> <p>Lokasi Page</p></a></li>";
+          }
+
+          ?>
+      
+      <?php  }   ?>
+      <?php if ($this->session->level == 'admin' or $this->session->level == 'staf') {?>
+ 
+          <?php
+          $cek = $this->model_app->umenu_akses("manajemenuser", $this->session->id_session);
+          if ($cek == 1 or $this->session->level == 'admin' or $this->session->level == 'staf') {
+            echo "<li class='nav-item'><a class='nav-link ".$act8."".($this->uri->segment(2) == "promopage" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/promopage'><i class='fas fa-tags nav-icon text-success'></i> <p>Promo Page</p></a></li>";
+          }
+
+          ?>
+      
+      <?php  }   ?>
+      <?php if ($this->session->level == 'admin' or $this->session->level == 'staf') {?>
+ 
+          <?php
+          $cek = $this->model_app->umenu_akses("manajemenuser", $this->session->id_session);
+          if ($cek == 1 or $this->session->level == 'admin' or $this->session->level == 'staf') {
+            echo "<li class='nav-item'><a class='nav-link ".$act8."".($this->uri->segment(2) == "contactpage" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/contactpage'><i class='fas fa-tags nav-icon text-success'></i> <p>Contact Page</p></a></li>";
+          }
+
+          ?>
+      
+      <?php  }   ?>
+      <?php if ($this->session->level == 'admin' or $this->session->level == 'staf') {?>
+ 
+          <?php
+          $cek = $this->model_app->umenu_akses("manajemenuser", $this->session->id_session);
+          if ($cek == 1 or $this->session->level == 'admin' or $this->session->level == 'staf') {
+            echo "<li class='nav-item'><a class='nav-link ".$act8."".($this->uri->segment(2) == "newspage" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/newspage'><i class='fas fa-tags nav-icon text-success'></i> <p>News Page</p></a></li>";
+          }
+
+          ?>
+      
+      <?php  }   ?>
+      <?php if ($this->session->level == 'admin' or $this->session->level == 'staf') {?>
+ 
+          <?php
+          $cek = $this->model_app->umenu_akses("manajemenuser", $this->session->id_session);
+          if ($cek == 1 or $this->session->level == 'admin' or $this->session->level == 'staf') {
+            echo "<li class='nav-item'><a class='nav-link ".$act8."".($this->uri->segment(2) == "karirpage" ? "active" : "")."' href='" . base_url() . $this->uri->segment(1) . "/karirpage'><i class='fas fa-tags nav-icon text-success'></i> <p>Karir Page</p></a></li>";
+          }
+
           ?>
       
       <?php  }   ?>
