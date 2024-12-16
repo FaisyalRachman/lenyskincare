@@ -210,6 +210,158 @@ class Administrator extends CI_Controller
             $this->template->load('administrator/template', 'administrator/mod_identitas/view_identitas', $data);
         }
     }
+    function treatmentpage()
+    {
+        // cek_session_akses('identitaswebsite', $this->session->id_session);
+        if (isset($_POST['submit'])) {
+                   
+                $data = array(
+                  
+                    'meta_deskripsi' => $this->input->post('h'),
+                    'meta_keyword' => $this->db->escape_str($this->input->post('g'))
+                );
+           
+            $where = array('id_identitas' => $this->input->post('id'));
+            $this->model_app->update('identitas', $data, $where);
+
+            redirect($this->uri->segment(1) . '/treatmentpage');
+        } else {
+            $proses = $this->model_app->edit('identitas', array('id_identitas' => 2))->row_array();
+            $data = array('record' => $proses);
+            $this->template->load('administrator/template', 'administrator/mod_treatmentpage/view_treatmentpage', $data);
+        }
+    }
+    function productpage()
+    {
+        // cek_session_akses('identitaswebsite', $this->session->id_session);
+        if (isset($_POST['submit'])) {
+                   
+                $data = array(
+                  
+                    'meta_deskripsi' => $this->input->post('h'),
+                    'meta_keyword' => $this->db->escape_str($this->input->post('g'))
+                );
+           
+            $where = array('id_identitas' => $this->input->post('id'));
+            $this->model_app->update('identitas', $data, $where);
+
+            redirect($this->uri->segment(1) . '/productpage');
+        } else {
+            $proses = $this->model_app->edit('identitas', array('id_identitas' => 3))->row_array();
+            $data = array('record' => $proses);
+            $this->template->load('administrator/template', 'administrator/mod_productpage/view_productpage', $data);
+        }
+    }
+    function lokasipage()
+    {
+        // cek_session_akses('identitaswebsite', $this->session->id_session);
+        if (isset($_POST['submit'])) {
+                   
+                $data = array(
+                  
+                    'meta_deskripsi' => $this->input->post('h'),
+                    'meta_keyword' => $this->db->escape_str($this->input->post('g'))
+               
+                );
+           
+            $where = array('id_identitas' => $this->input->post('id'));
+            $this->model_app->update('identitas', $data, $where);
+
+            redirect($this->uri->segment(1) . '/lokasipage');
+        } else {
+            $proses = $this->model_app->edit('identitas', array('id_identitas' => 4))->row_array();
+            $data = array('record' => $proses);
+            $this->template->load('administrator/template', 'administrator/mod_lokasipage/view_lokasipage', $data);
+        }
+    }
+    function promopage()
+    {
+        // cek_session_akses('identitaswebsite', $this->session->id_session);
+        if (isset($_POST['submit'])) {
+                   
+                $data = array(
+                  
+                    'meta_deskripsi' => $this->input->post('h'),
+                    'meta_keyword' => $this->db->escape_str($this->input->post('g'))
+               
+                );
+           
+            $where = array('id_identitas' => $this->input->post('id'));
+            $this->model_app->update('identitas', $data, $where);
+
+            redirect($this->uri->segment(1) . '/promopage');
+        } else {
+            $proses = $this->model_app->edit('identitas', array('id_identitas' => 5))->row_array();
+            $data = array('record' => $proses);
+            $this->template->load('administrator/template', 'administrator/mod_promopage/view_promopage', $data);
+        }
+    }
+    function contactpage()
+    {
+        // cek_session_akses('identitaswebsite', $this->session->id_session);
+        if (isset($_POST['submit'])) {
+                   
+                $data = array(
+                  
+                    'meta_deskripsi' => $this->input->post('h'),
+                    'meta_keyword' => $this->db->escape_str($this->input->post('g'))
+               
+                );
+           
+            $where = array('id_identitas' => $this->input->post('id'));
+            $this->model_app->update('identitas', $data, $where);
+
+            redirect($this->uri->segment(1) . '/contactpage');
+        } else {
+            $proses = $this->model_app->edit('identitas', array('id_identitas' => 6))->row_array();
+            $data = array('record' => $proses);
+            $this->template->load('administrator/template', 'administrator/mod_contactpage/view_contactpage', $data);
+        }
+    }
+    function newspage()
+    {
+        // cek_session_akses('identitaswebsite', $this->session->id_session);
+        if (isset($_POST['submit'])) {
+                   
+                $data = array(
+                  
+                    'meta_deskripsi' => $this->input->post('h'),
+                    'meta_keyword' => $this->db->escape_str($this->input->post('g'))
+               
+                );
+           
+            $where = array('id_identitas' => $this->input->post('id'));
+            $this->model_app->update('identitas', $data, $where);
+
+            redirect($this->uri->segment(1) . '/newspage');
+        } else {
+            $proses = $this->model_app->edit('identitas', array('id_identitas' => 7))->row_array();
+            $data = array('record' => $proses);
+            $this->template->load('administrator/template', 'administrator/mod_newspage/view_newspage', $data);
+        }
+    }
+    function karirpage()
+    {
+        // cek_session_akses('identitaswebsite', $this->session->id_session);
+        if (isset($_POST['submit'])) {
+                   
+                $data = array(
+                  
+                    'meta_deskripsi' => $this->input->post('h'),
+                    'meta_keyword' => $this->db->escape_str($this->input->post('g'))
+               
+                );
+           
+            $where = array('id_identitas' => $this->input->post('id'));
+            $this->model_app->update('identitas', $data, $where);
+
+            redirect($this->uri->segment(1) . '/karirpage');
+        } else {
+            $proses = $this->model_app->edit('identitas', array('id_identitas' => 8))->row_array();
+            $data = array('record' => $proses);
+            $this->template->load('administrator/template', 'administrator/mod_karirpage/view_karirpage', $data);
+        }
+    }
     function aboutbracatour()
     {
         cek_session_akses('aboutbracatour', $this->session->id_session);
@@ -625,8 +777,8 @@ class Administrator extends CI_Controller
     function listberita()
     {
        // cek_session_akses('listberita', $this->session->id_session);
-        if ($this->session->level == 'admin' || $this->session->level == 'staf') {
-            $data['record'] = $this->model_app->view_ordering('berita', 'id_berita', 'DESC');
+        if ($this->session->level == 'admin') {
+            $data['record'] = $this->model_app->view_join_two('berita','kategori','users','id_kategori','username','id_berita', 'DESC');
         } else {
             $data['record'] = $this->model_app->view_where_ordering('berita', array('username' => $this->session->username), 'id_berita', 'DESC');
         }
@@ -694,6 +846,7 @@ class Administrator extends CI_Controller
                     'sub_judul' => $this->db->escape_str($this->input->post('c')),
                     'youtube' => $this->db->escape_str($this->input->post('d')),
                     'judul_seo' => seo_title($this->input->post('b')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('m')),
                     'headline' => $this->db->escape_str($this->input->post('e')),
                     'aktif' => $this->db->escape_str($this->input->post('f')),
                     'utama' => $this->db->escape_str($this->input->post('g')),
@@ -714,6 +867,7 @@ class Administrator extends CI_Controller
                     'sub_judul' => $this->db->escape_str($this->input->post('c')),
                     'youtube' => $this->db->escape_str($this->input->post('d')),
                     'judul_seo' => seo_title($this->input->post('b')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('m')),
                     'headline' => $this->db->escape_str($this->input->post('e')),
                     'aktif' => $this->db->escape_str($this->input->post('f')),
                     'utama' => $this->db->escape_str($this->input->post('g')),
@@ -782,6 +936,7 @@ class Administrator extends CI_Controller
                     'sub_judul' => $this->db->escape_str($this->input->post('c')),
                     'youtube' => $this->db->escape_str($this->input->post('d')),
                     'judul_seo' => seo_title($this->input->post('b')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('m')),
                     'headline' => $this->db->escape_str($this->input->post('e')),
                     'aktif' => $this->db->escape_str($this->input->post('f')),
                     'utama' => $this->db->escape_str($this->input->post('g')),
@@ -801,6 +956,7 @@ class Administrator extends CI_Controller
                     'sub_judul' => $this->db->escape_str($this->input->post('c')),
                     'youtube' => $this->db->escape_str($this->input->post('d')),
                     'judul_seo' => seo_title($this->input->post('b')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('m')),
                     'headline' => $this->db->escape_str($this->input->post('e')),
                     'aktif' => $this->db->escape_str($this->input->post('f')),
                     'utama' => $this->db->escape_str($this->input->post('g')),
@@ -1192,8 +1348,8 @@ $efile2 = $this->input->post('euserfile2');
 
     function kategoritreatment()
     {
-        cek_session_akses('kategoriberita', $this->session->id_session);
-        if ($this->session->level == 'admin') {
+      //  cek_session_akses('kategoriberita', $this->session->id_session);
+      if ($this->session->level == 'admin' || $this->session->level == 'staf' || $this->session->level == 'supervisor') {
             $data['record'] = $this->model_app->view_ordering('kategori', 'id_kategori', 'DESC');
         } else {
             $data['record'] = $this->model_app->view_where_ordering('kategori', array('username' => $this->session->username), 'id_kategori', 'DESC');
@@ -1202,8 +1358,8 @@ $efile2 = $this->input->post('euserfile2');
     }
      function kategoriproduct()
     {
-        cek_session_akses('kategoriproduct', $this->session->id_session);
-        if ($this->session->level == 'admin') {
+      //  cek_session_akses('kategoriproduct', $this->session->id_session);
+      if ($this->session->level == 'admin' || $this->session->level == 'supervisor' || $this->session->level == 'staf') {
             $data['record'] = $this->model_app->view_ordering('kategoriproduct', 'id_kategori', 'DESC');
         } else {
             $data['record'] = $this->model_app->view_where_ordering('kategoriproduct', array('username' => $this->session->username), 'id_kategori', 'DESC');
@@ -1213,20 +1369,20 @@ $efile2 = $this->input->post('euserfile2');
     function subkategori()
     {
        // cek_session_akses('subkategori', $this->session->id_session);
-        if ($this->session->level == 'admin' || $this->session->level == 'supervisor') {
+        if ($this->session->level == 'admin' || $this->session->level == 'supervisor' || $this->session->level == 'staf') {
               $data['record'] = $this->model_app->view_ordering('subkategori', 'id_subkategori', 'DESC');
         } else {
-            $data['record'] = $this->model_app->view_where_ordering('subkategori', array('nama_subkatategori' => $this->session->username), 'id_subkategori', 'DESC');
+            $data['record'] = $this->model_app->view_where_ordering('subkategori', array('nama_subkategori' => $this->session->username), 'id_subkategori', 'DESC');
         }
         $this->template->load('administrator/template', 'administrator/mod_subkategori/view_subkategori', $data);
     }
 function subkategoriproduct()
     {
        // cek_session_akses('subkategori', $this->session->id_session);
-        if ($this->session->level == 'admin' || $this->session->level == 'supervisor') {
+       if ($this->session->level == 'admin' || $this->session->level == 'supervisor' || $this->session->level == 'staf') {
               $data['record'] = $this->model_app->view_ordering('subkategoriproduct', 'id_subkategori', 'DESC');
         } else {
-            $data['record'] = $this->model_app->view_where_ordering('subkategoriproduct', array('nama_subkatategori' => $this->session->username), 'id_subkategori', 'DESC');
+            $data['record'] = $this->model_app->view_where_ordering('subkategoriproduct', array('nama_subkategori' => $this->session->username), 'id_subkategori', 'DESC');
         }
         $this->template->load('administrator/template', 'administrator/mod_subkategoriproduct/view_subkategoriproduct', $data);
     }
@@ -1271,7 +1427,7 @@ function subkategoriproduct()
     }
      function tambah_kategoritreatment()
     {
-        cek_session_akses('kategoritreatment', $this->session->id_session);
+     //   cek_session_akses('kategoritreatment', $this->session->id_session);
         if (isset($_POST['submit'])) {
             $config['upload_path'] = 'asset/foto_berita/';
             $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG|jpeg|PNG|swf';
@@ -1321,6 +1477,8 @@ function subkategoriproduct()
                     'nama_kategori' => $this->db->escape_str($this->input->post('a')),
                     'username' => $this->session->username,
                     'kategori_seo' => seo_title($this->input->post('a')),
+                    'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'aktif' => $this->db->escape_str($this->input->post('b')),
                     'deskripsi' => $this->db->escape_str($this->input->post('e')),
                     'detail' => $this->db->escape_str($this->input->post('f')),
@@ -1331,6 +1489,8 @@ function subkategoriproduct()
                     'nama_kategori' => $this->db->escape_str($this->input->post('a')),
                     'username' => $this->session->username,
                     'kategori_seo' => seo_title($this->input->post('a')),
+                    'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'aktif' => $this->db->escape_str($this->input->post('b')),
                     'deskripsi' => $this->db->escape_str($this->input->post('e')),
                     'detail' => $this->db->escape_str($this->input->post('f')),
@@ -1346,7 +1506,7 @@ function subkategoriproduct()
     }
     function tambah_subkategori()
     {
-        cek_session_akses('subkategori', $this->session->id_session);
+      //  cek_session_akses('subkategori', $this->session->id_session);
         if (isset($_POST['submit'])) {
             $config['upload_path'] = 'asset/foto_produk/';
             $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG|jpeg|PNG|swf';
@@ -1405,6 +1565,8 @@ function subkategoriproduct()
                     'recomended' => $this->db->escape_str($this->input->post('h')),
                     'username' => $this->session->username,
                     'subkategori_seo' => seo_title($this->input->post('a')),
+                    'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'aktif' => $this->db->escape_str($this->input->post('b')),
                     'subdeskripsi' => $this->db->escape_str($this->input->post('e')),
                     'subdetail' => $this->db->escape_str($string),
@@ -1417,6 +1579,8 @@ function subkategoriproduct()
                     'recomended' => $this->db->escape_str($this->input->post('h')),
                     'username' => $this->session->username,
                     'subkategori_seo' => seo_title($this->input->post('a')),
+                    'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'aktif' => $this->db->escape_str($this->input->post('b')),
                     'subdeskripsi' => $this->db->escape_str($this->input->post('e')),
                     'subdetail' => $this->db->escape_str($string),
@@ -1433,7 +1597,7 @@ function subkategoriproduct()
     }
     function edit_kategoritreatment()
     {
-        cek_session_akses('kategoriberita', $this->session->id_session);
+       // cek_session_akses('kategoriberita', $this->session->id_session);
         $id = $this->uri->segment(3);
         if (isset($_POST['submit'])) {
             $config['upload_path'] = 'asset/foto_produk/';
@@ -1468,7 +1632,7 @@ function subkategoriproduct()
             $this->model_app->update('kategori', $data, $where);
             redirect($this->uri->segment(1) . '/kategoritreatment');
         } else {
-            if ($this->session->level == 'admin') {
+            if ($this->session->level == 'admin' || $this->session->level == 'staf' || $this->session->level == 'supervisor') {
                 $proses = $this->model_app->edit('kategori', array('id_kategori' => $id))->row_array();
             } else {
                 $proses = $this->model_app->edit('kategori', array('id_kategori' => $id, 'username' => $this->session->username))->row_array();
@@ -1495,6 +1659,8 @@ function subkategoriproduct()
                     'detail' => $this->db->escape_str($this->input->post('f')),
                     'username' => $this->session->username,
                     'kategori_seo' => seo_title($this->input->post('a')),
+                    'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'aktif' => $this->db->escape_str($this->input->post('b')),
                     'sidebar' => $this->db->escape_str($this->input->post('c'))
                 );
@@ -1505,6 +1671,8 @@ function subkategoriproduct()
                     'detail' => $this->db->escape_str($this->input->post('f')),
                     'username' => $this->session->username,
                     'kategori_seo' => seo_title($this->input->post('a')),
+                    'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'aktif' => $this->db->escape_str($this->input->post('b')),
                     'sidebar' => $this->db->escape_str($this->input->post('c')),
                     'gambar_utama' => $hasil['file_name']
@@ -1514,7 +1682,7 @@ function subkategoriproduct()
             $this->model_app->update('kategoriproduct', $data, $where);
             redirect($this->uri->segment(1) . '/kategoriproduct');
         } else {
-            if ($this->session->level == 'admin') {
+            if ($this->session->level == 'admin' || $this->session->level == 'staf' || $this->session->level == 'supervisor') {
                 $proses = $this->model_app->edit('kategoriproduct', array('id_kategori' => $id))->row_array();
             } else {
                 $proses = $this->model_app->edit('kategoriproduct', array('id_kategori' => $id, 'username' => $this->session->username))->row_array();
@@ -1525,7 +1693,7 @@ function subkategoriproduct()
     }
     function edit_subkategori()
     {
-        cek_session_akses('subkategori', $this->session->id_session);
+       // cek_session_akses('subkategori', $this->session->id_session);
         $id = $this->uri->segment(3);
         if (isset($_POST['submit'])) {
             $config['upload_path'] = 'asset/foto_produk/';
@@ -1541,6 +1709,8 @@ function subkategoriproduct()
                     'id_kategori' => $this->db->escape_str($this->input->post('g')),
                     'recomended' => $this->db->escape_str($this->input->post('h')),
                     'subdeskripsi' => $this->db->escape_str($this->input->post('e')),
+                    'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'subdetail' => $this->db->escape_str($string),
                     'username' => $this->session->username,
                     'subkategori_seo' => seo_title($this->input->post('a')),
@@ -1553,6 +1723,8 @@ function subkategoriproduct()
                     'id_kategori' => $this->db->escape_str($this->input->post('g')),
                     'recomended' => $this->db->escape_str($this->input->post('h')),
                     'subdeskripsi' => $this->db->escape_str($this->input->post('e')),
+                   'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'subdetail' => $this->db->escape_str($string),
                     'username' => $this->session->username,
                     'subkategori_seo' => seo_title($this->input->post('a')),
@@ -1565,7 +1737,7 @@ function subkategoriproduct()
             $this->model_app->update('subkategori', $data, $where);
             redirect($this->uri->segment(1) . '/subkategori');
         } else {
-            if ($this->session->level == 'admin') {
+            if ($this->session->level == 'admin' || $this->session->level == 'staf' || $this->session->level == 'supervisor') {
                 $proses = $this->model_app->edit('subkategori', array('id_subkategori' => $id))->row_array();
             } else {
                 $proses = $this->model_app->edit('subkategori', array('id_subkategori' => $id, 'username' => $this->session->username))->row_array();
@@ -1595,6 +1767,8 @@ function subkategoriproduct()
                     'subdetail' => $this->db->escape_str($string),
                     'username' => $this->session->username,
                     'subkategori_seo' => seo_title($this->input->post('a')),
+                    'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'aktif' => $this->db->escape_str($this->input->post('b')),
                     'sidebar' => $this->db->escape_str($this->input->post('c'))
                 );
@@ -1607,6 +1781,8 @@ function subkategoriproduct()
                     'subdetail' => $this->db->escape_str($string),
                     'username' => $this->session->username,
                     'subkategori_seo' => seo_title($this->input->post('a')),
+                    'meta_title' => $this->db->escape_str($this->input->post('m')),
+                    'meta_desc' => $this->db->escape_str($this->input->post('n')),
                     'aktif' => $this->db->escape_str($this->input->post('b')),
                     'sidebar' => $this->db->escape_str($this->input->post('c')),
                     'subgambar_utama' => $hasil['file_name']
@@ -1942,8 +2118,8 @@ function subkategoriproduct()
     }
     function bukutamu()
     {
-        cek_session_akses('albumslide', $this->session->id_session);
-        if ($this->session->level == 'admin') {
+      //  cek_session_akses('albumslide', $this->session->id_session);
+      if ($this->session->level == 'admin' || $this->session->level == 'supervisor' || $this->session->level == 'staf') {
             $data['record'] = $this->model_app->view_ordering('hubungi', 'id_hubungi', 'DESC');
         } else {
             $data['record'] = $this->model_app->view_where_ordering('hubungi', array('nama' => $this->session->username), 'id_hubungi', 'DESC');
@@ -1953,8 +2129,8 @@ function subkategoriproduct()
     
     function albumslide()
     {
-        cek_session_akses('albumslide', $this->session->id_session);
-        if ($this->session->level == 'admin') {
+      //  cek_session_akses('albumslide', $this->session->id_session);
+        if ($this->session->level == 'admin' || $this->session->level == 'supervisor' || $this->session->level == 'staf') {
             $data['record'] = $this->model_app->view_ordering('album', 'id_album', 'DESC');
         } else {
             $data['record'] = $this->model_app->view_where_ordering('album', array('username' => $this->session->username), 'id_album', 'DESC');
@@ -4041,6 +4217,6 @@ function subkategoriproduct()
     function logout()
     {
         $this->session->sess_destroy();
-        redirect('main');
+        redirect('klinik_kecantikan_tangerang');
     }
 }
