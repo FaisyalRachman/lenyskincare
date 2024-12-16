@@ -13,10 +13,8 @@
                       <tr>
                         <th style='width:40px'>No</th>
                         <th>Nama Product</th>
-                        <th>Link</th>
+                        <th>Penjelasan Produk</th>
                         <th>Promo</th>
-                        <th>Posisi</th>
-                      
                         <th style='width:70px'>Action</th>
                       </tr>
                     </thead>
@@ -26,11 +24,10 @@
                     foreach ($record as $row){
                     $artikel = $this->model_app->view_where('berita',array('id_kategori'=>$row['id_kategori']))->num_rows();
                     echo "<tr><td>$no</td>
-                              <td>$row[nama_kategori]</td>
-                              <td><a target='_BLANK' href='".base_url()."kategori/detail/$row[kategori_seo]'>kategori/detail/$row[kategori_seo]</a></td>
+                              <td>$row[nama_kategori]<br><small>Metad description : $row[meta_desc]</small></td>
+                              <td><small>Include : $row[deskripsi]</small><br><small>Term Condition : $row[detail]</small></td>
                               <td>$row[aktif]</td>
-                              <td>$row[sidebar]</td>
-                            
+                              
                               <td><center>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='".base_url().$this->uri->segment(1)."/edit_kategoriproduct/$row[id_kategori]'><span class='nav-icon fas fa-edit'></span></a>
                                 <a class='btn btn-danger btn-xs' title='Delete Data' href='".base_url().$this->uri->segment(1)."/delete_kategoriproduct/$row[id_kategori]' onclick=\"return confirm('Apa anda yakin untuk hapus Data ini?')\"><span class='nav-icon fas fa-trash-alt'></span></a>
