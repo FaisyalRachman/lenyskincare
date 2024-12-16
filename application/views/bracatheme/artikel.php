@@ -8,7 +8,7 @@
     </div>
 <div class="row">
 <div class="col-lg-6" style="padding:15px;">
-<h2 style="font-family:Roboto;font-size:1.7vw;"><i class="bx bx-news"></i> Recent News</h2>   
+<h2 style="font-family:Roboto;font-size:1.7vw;"><i class="bx bx-news"></i> Tips Terbaru</h2>   
 
 <?php
         $j=1;
@@ -18,6 +18,7 @@
           $isi_berita =(strip_tags($t['isi_berita'])); 
           $isi = substr($isi_berita,0,220); 
           $isi = substr($isi_berita,0,strrpos($isi," ")); 
+          $penulis = $t['nama_lengkap'];
           $judul = $t['judul']; 
           $urlberita = $t['judul_seo']; 
           $gbr = $t['gambar']; 
@@ -27,7 +28,8 @@
 
         echo "<div class='testimonial-item'>";
         echo "<h4 style='font-family:century gothic;font-size:1.4vw;'><a href='".base_url()."news/".$urlberita."'>" . $judul . "</a></h4>
-        <p style='font-family:century gothic;text-align:left;' class='detailberita'><img src='asset/foto_berita/$gbr' class='img-fluid' style='width:50%;float:left;padding:8px;' alt=''>" . $isi . "</p>";
+        <p style='font-family:century gothic;text-align:left;' class='detailberita'>
+        <img src='asset/foto_berita/$gbr' class='img-fluid' style='width:50%;float:left;padding:8px;' alt=''> ".$isi . "...<small><b><i> Penulis : ". $penulis." </i></b></small></p>";
         echo "</div><br><br><p></p>";
     }
         ?>

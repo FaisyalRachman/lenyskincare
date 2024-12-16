@@ -109,7 +109,7 @@
               </div>
               	<p class="contact-form-message">
 														<label for="c_message">
-														<?php echo $image; ?><br></label>
+														<?php echo $imagecap; ?><br></label>
 														<input name='security_code' maxlength=5 type="text" class="required form-control" placeholder="Masukkkan Kode">
 													</p>
              

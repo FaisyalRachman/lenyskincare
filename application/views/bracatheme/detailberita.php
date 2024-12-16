@@ -6,6 +6,10 @@
  			<div class="col-lg-12 icon-boxes flex-column justify-content-center" style="padding:1px 90px;">
 				
  				<h2 style="font-size:1.8vw;font-family: Roboto, sans-serif !important;font-weight:bold"><b><?php echo $rows['judul']; ?></b></h2>
+				 <small style="padding:20px;"><span class="font-italic">Penulis : <b> <?php echo "$rows[nama_lengkap]"; ?> </b> </span>
+ 					<span class="meta">&nbsp;<?php echo tgl_indo($rows['tanggal']) . ", $rows[jam] WIB"; ?>
+ 						<span class="tag" style="background-color: #2a8ece;"><a href="<?php echo base_url() . "kategori/detail/$rows[kategori_seo]"; ?>"></a></span></small>
+ 				
  				<p style="font-size:2vw;font-family: Roboto, sans-serif !important;"><?php echo $rows['isi_berita']; ?></p>
 
     <div class="social float-right"> <script language="javascript">

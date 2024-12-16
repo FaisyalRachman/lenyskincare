@@ -45,16 +45,19 @@ $sosmed = $this->model_utama->view('identitas')->row_array();
         
           <div class="row">
           <?php 
-            $gambar =  $this->model_utama->view_where_ordering_limit('berita',array('status' => 'Y'),'judul','DESC','0','4');
+          $gambar = $this->model_utama->view_join_one('berita','users','username',array('status' => 'Y'),'id_berita','DESC','0','4');
+					
+//$gambar =  $this->model_utama->view_where_ordering_limit('berita',array('status' => 'Y'),'judul','DESC','0','4');
             foreach ($gambar->result_array() as $gbr){
               $isi_berita =(strip_tags($gbr['isi_berita'])); 
               $isi = substr($isi_berita,0,148); 
+              $penulis = $gbr['nama_lengkap'];
               $judul =(strip_tags($gbr['judul'])); 
               $jdl = substr($judul,0,80); 
             ?>
           <div class="col-lg-3">
         
-          <p style="text-align:left!important;font-family:century gothic;color:#8B6FB9 !important;font-weight:bold;font-size:1.2em !important;"> <?php echo $jdl;?> <small style="font-size:0.6em !important;"><i>(<?php echo $gbr['tanggal'];?><?php echo $gbr['jam'];?>)</i></small></p>
+          <p style="text-align:left!important;font-family:century gothic;color:#8B6FB9 !important;font-weight:bold;font-size:1.2em !important;"> <?php echo $jdl;?> <br><small style="font-size:0.6em !important;"><i>Penulis : <?= $penulis; ?></i></small></p>
               <p style="text-align:left;font-family:century gothic;font-size:1.0em;color:#888;"><img src="<?php echo base_url('asset/foto_berita/'); ?><?php echo $gbr['gambar'];?>" style="width:100%"><?php echo $isi;?>... <a href="<?php echo base_url('news/');?><?php echo $gbr['judul_seo'];?>"><span style="color:#776FB9" font-weight="bold">selengkapnya <i class="fa fa-newspaper"></i></span></a></p>
            
 </div>
