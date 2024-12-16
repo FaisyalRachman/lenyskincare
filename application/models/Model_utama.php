@@ -55,6 +55,16 @@ public function view_ordering_limit2($table,$order,$ordering,$baris,$dari){
         $this->db->limit($dari, $baris);
         return $this->db->get();
     }
+    public function view_join_onesb($table1,$table2,$field,$where,$order,$ordering,$baris,$dari){
+        $this->db->select('*,subkategoriproduct.meta_desc as metadesc,,subkategoriproduct.meta_title as metatitle');
+        $this->db->from($table1);
+        $this->db->join($table2, $table1.'.'.$field.'='.$table2.'.'.$field);
+        $this->db->where($where);
+        $this->db->order_by($order,$ordering);
+        $this->db->limit($dari, $baris);
+        return $this->db->get();
+    }
+
 
     public function view_joinn($table1,$table2,$table3,$field,$field1,$order,$ordering,$baris,$dari){
         $this->db->select('*');

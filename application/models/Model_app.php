@@ -53,6 +53,14 @@ class Model_app extends CI_model{
         $this->db->order_by($order,$ordering);
         return $this->db->get()->result_array();
     }
+    public function view_join_two($table1,$table2,$table3,$field,$field1,$order,$ordering){
+        $this->db->select('*');
+        $this->db->from($table1);
+        $this->db->join($table2, $table1.'.'.$field.'='.$table2.'.'.$field);
+        $this->db->join($table3, $table1.'.'.$field1.'='.$table3.'.'.$field1);
+        $this->db->order_by($order,$ordering);
+        return $this->db->get()->result_array();
+    }
 
     public function view_join_where($table1,$table2,$field,$where,$order,$ordering){
         $this->db->select('*');
