@@ -15,6 +15,8 @@
                     <tr><th width='180px' scope='row'>Nama Treatment</th>    <td><input type='text' class='form-control' name='a' value='<?= $rows[nama_subkategori]; ?>' required></td></tr>
                     <tr><th width='120px' scope='row'>Harga</th>    <td><input type="text" class='form-control' name='e' value='<?= $rows[subdeskripsi]; ?>' required></td></tr>
                     <tr><th width='120px' scope='row'>Detail Keterangan</th>    <td><textarea class='form-control' id='editor1' name='f' value=''required><?= $rows[subdetail]; ?></textarea></td></tr>
+                    <tr><th width='220px' scope='row'>Meta Title</th>    <td><input type="text" class='form-control' name='m' placeholder='Contoh : Ttreatment IPL Rejuve' value='<?= $rows[meta_title]; ?>' required></td></tr></td></tr>
+                    <tr><th width='220px' scope='row'>Meta Description</th>    <td><textarea class='form-control' name='n' placeholder='Contoh : Ingin menjaga kekencangan kulit tanpa operasi? Yuk coba treatment IPL Rejuve! Baca di LenySkinCare' value=''required><?= $rows[meta_desc]; ?></textarea></td></tr>
                     <tr><th scope='row'>Kategori</th>                          <td> 
                       <select class="form-control" name='g'>
                       <?php  foreach ($recordkat->result_array() as $r) {
