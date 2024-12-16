@@ -71,10 +71,10 @@ class Kategori extends CI_Controller {
 		}
 	}
 	public function detailsubproduct(){
-		$query = $this->model_utama->view_join_one('subkategoriproduct','kategoriproduct', 'id_kategori',array('id_subkategori' => $this->uri->segment(3)), 'nama_kategori', 'ASC', 0, 20);
+		$query = $this->model_utama->view_join_onesb('subkategoriproduct','kategoriproduct', 'id_kategori',array('id_subkategori' => $this->uri->segment(3)), 'nama_kategori', 'ASC', 0, 20);
 		//$query = $this->model_utama->view_where('kategori',array('kategori_seo' => $this->uri->segment(3),'sidebar' => '2'));
 		if ($query->num_rows()<=0){
-			redirect('main');
+			redirect('klinik_kecantikan_tangerang');
 		}else{
 			$row = $query->row_array();
 			$jumlah= $this->model_utama->view_where('produk',array('id_subkategori' => $row['id_subkategori']))->num_rows();
@@ -85,9 +85,9 @@ class Kategori extends CI_Controller {
 			
 			$proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
             $datas = array('record' => $proses);
-			$data['title'] = "$row[nama_kategori] Klinik Kecantikan Di Tangerang - Leny Skin Care";
-			$data['description'] = $proses['meta_deskripsi'];
-		    $data['keywords'] = $row['nama_kategori'] .' '. $proses['meta_keyword'];
+			$data['title'] = $row['metatitle'];
+			$data['description'] = $row['metadesc'];
+		    $data['keywords'] = $proses['meta_keyword'];
 			$data['url'] = base_url($this->uri->segment('2'));
 			$data['image'] = base_url('assets/img/logolenys.png');
 			$data['rows'] = $row;

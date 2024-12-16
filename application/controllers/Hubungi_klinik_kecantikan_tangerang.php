@@ -15,11 +15,11 @@ class Hubungi_klinik_kecantikan_tangerang extends CI_Controller {
 		$query = $this->model_utama->view_where('mod_alamat',array('id_alamat' => 1));
 		$data['iden'] = $this->model_utama->view_where('identitas',array('id_identitas' => 1))->row_array();
 		$row = $query->row_array();
-		$proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
+		$proses = $this->model_app->edit('identitas', array('id_identitas' => 6))->row_array();
 		$datas = array('record' => $proses);
-		$data['title'] = "Hubungi Klinik Kecantikan Di Tangerang - Leny Skin Care";
+		$data['title'] = 'Hubungi Leny Skin Care '. $proses['meta_keyword'];
 		$data['description'] = $proses['meta_deskripsi'];
-		$data['keywords'] = 'hubungi '. $proses['meta_keyword'];
+		$data['keywords'] =  $proses['meta_keyword'];
 		$data['url'] = base_url($this->uri->segment('1'));
 		$data['image'] = base_url('assets/img/logolenys.png');
 		$data['rows'] = $row;

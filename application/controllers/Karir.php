@@ -29,9 +29,14 @@ class Karir extends CI_Controller {
 			$data['no_telp'] = no_telp();
 			$data['email'] = email();
 		
-		    $proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
-		     $data = array('record' => $proses);
-			 $data['no_telp'] = no_telp();
+			$proses = $this->model_app->edit('identitas', array('id_identitas' => 8))->row_array();
+            $datas = array('record' => $proses);
+			$data['title'] = 'Jadi Profesional di Leny Skin Care '. $proses['meta_keyword'];
+			$data['description'] = $proses['meta_deskripsi'];
+		    $data['keywords'] = $proses['meta_keyword'];
+			$data['url'] = base_url($this->uri->segment('1'));
+			$data['image'] = base_url('assets/img/logolenys.png');
+	    	 $data['no_telp'] = no_telp();
 			 $data['email'] = email();
 			$this->pagination->initialize($config);
 			$this->template->load(template().'/template',template().'/karir',$data);

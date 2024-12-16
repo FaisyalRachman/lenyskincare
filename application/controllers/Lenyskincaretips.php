@@ -21,21 +21,17 @@ class Lenyskincaretips extends CI_Controller {
 			}else{
 				$dari = $this->uri->segment('3');
 			}
-			
-				if ($this->input->post('kata')){
-					$data['title'] = "Hasil Pencarian keyword - ".cetak($this->input->post('kata',TRUE));
-					$data['description'] = description();
-					$data['keywords'] = keywords();
-					$data['berita'] = $this->model_utama->cari_berita(cetak($this->input->post('kata',TRUE)));
-				}else{
-					$data['title'] = "Semua Berita";
-					$data['description'] = description();
-					$data['keywords'] = keywords();
-					$data['no_telp'] = no_telp();
-		$data['email'] = email();
-					$data['berita'] = $this->model_utama->view_joinn('berita','users','kategori','username','id_kategori','id_berita','DESC',$dari,$config['per_page']);
-					$this->pagination->initialize($config);
-				}
+			$proses = $this->model_app->edit('identitas', array('id_identitas' => 7))->row_array();
+            $datas = array('record' => $proses);
+			$data['title'] = 'Artikel Tips Kecantikan Leny Skin Care '. $proses['meta_keyword'];
+			$data['description'] = $proses['meta_deskripsi'];
+		    $data['keywords'] = $proses['meta_keyword'];
+			$data['url'] = base_url($this->uri->segment('1'));
+			$data['image'] = base_url('assets/img/logolenys.png');
+	    	 $data['no_telp'] = no_telp();
+			 $data['email'] = email();
+			$this->pagination->initialize($config);
+
 			$this->template->load(template().'/template',template().'/artikel',$data);
 	}
 

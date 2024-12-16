@@ -46,11 +46,11 @@ class News extends CI_Controller {
 		}else{
 			$row = $query->row_array();
 
-			$proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
+			//$proses = $this->model_app->edit('berita', array('id_berita' => $id))->row_array();
             $datas = array('record' => $proses);
 			$data['title'] = cetak($row['judul']);
-			$data['description'] = $proses['meta_deskripsi'];
-		    $data['keywords'] = 'Artikel, tips dan trik, '.$proses['meta_keyword'];
+			$data['description'] =$row['meta_desc'];
+		    $data['keywords'] = $row['tag'];
 			$data['url'] = base_url('news/'.$this->uri->segment('2'));
 			$data['image'] = base_url('asset/foto_berita/'.$row['gambar']);
 

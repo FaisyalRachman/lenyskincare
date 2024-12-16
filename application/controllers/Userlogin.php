@@ -19,6 +19,7 @@ class Userlogin extends CI_Controller {
 		$data['title'] = 'Hubungi Kami';
 		$data['description'] = 'Silahkan Mengisi Form Dibawah ini untuk menghubungi kami';
 		$data['keywords'] = 'hubungi, kontak, kritik, saran, pesan';
+        $data['image'] = base_url('assets/img/logolenys.png');
 		$data['rows'] = $row;
 
 		$this->load->helper('captcha');
@@ -34,7 +35,7 @@ class Userlogin extends CI_Controller {
         );
 
         $cap = create_captcha($vals);
-        $data['image'] = $cap['image'];
+        $data['imagecap'] = $cap['image'];
         $this->session->set_userdata('mycaptcha', $cap['word']);
 		$this->template->load(template().'/template',template().'/userlogin',$data);
 	}

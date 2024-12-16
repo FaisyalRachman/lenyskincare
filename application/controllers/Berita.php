@@ -40,7 +40,7 @@ class Berita extends CI_Controller {
 	public function detail(){
 		$query = $this->model_utama->view_join_two('berita','users','kategori','username','id_kategori',array('judul_seo' => $this->uri->segment(3)),'id_berita','DESC',0,1);
 		if ($query->num_rows()<=0){
-			redirect('main');
+			redirect('klinik_kecantikan_tangerang');
 		}else{
 			$row = $query->row_array();
 			$data['title'] = cetak($row['judul']);

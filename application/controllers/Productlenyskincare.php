@@ -21,11 +21,11 @@ class Productlenyskincare extends CI_Controller {
 			}else{
 				$dari = $this->uri->segment('4');
 			}
-			$proses = $this->model_app->edit('identitas', array('id_identitas' => 1))->row_array();
+			$proses = $this->model_app->edit('identitas', array('id_identitas' => 3))->row_array();
             $datas = array('record' => $proses);
-			$data['title'] = "Product Klinik Kecantikan Di Tangerang - Leny Skin Care";
+			$data['title'] = 'Produk Leny Skin Care '. $proses['meta_keyword'];
 			$data['description'] = $proses['meta_deskripsi'];
-		    $data['keywords'] = 'produk '.$proses['meta_keyword'];
+		    $data['keywords'] = $proses['meta_keyword'];
 			$data['url'] = base_url($this->uri->segment('1'));
 			$data['image'] = base_url('assets/img/logolenys.png');
 			$data['no_telp'] = no_telp();
