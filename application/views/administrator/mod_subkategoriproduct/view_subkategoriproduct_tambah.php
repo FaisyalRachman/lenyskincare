@@ -19,6 +19,8 @@
                     <tr><th width='180px' scope='row'>Nama Sub Product</th>    <td><input type='text' class='form-control' name='a' required></td></tr>
                     <tr><th width='120px' scope='row'>Harga</th>    <td><input type="text" class='form-control' name='e' required></td></tr>
                     <tr><th width='120px' scope='row'>Detail Keterangan</th>    <td><textarea class='form-control' id='editor1' name='f' required></textarea></td></tr>
+                    <tr><th width='220px' scope='row'>Meta Title</th>    <td><input type="text" class='form-control' name='m' placeholder='Contoh : Ttreatment IPL Rejuve' value='<?= $rows[meta_title]; ?>' required></td></tr></td></tr>
+                    <tr><th width='220px' scope='row'>Meta Description</th>    <td><textarea class='form-control' name='n' placeholder='Contoh : Ingin menjaga kekencangan kulit tanpa operasi? Yuk coba treatment IPL Rejuve! Baca di LenySkinCare' value=''required><?= $rows[meta_desc]; ?></textarea></td></tr>
                     <tr><th scope='row'>Kategori Product</th>                          <td> <select class="form-control" name='g'><?php  foreach ($recordkat->result_array() as $r) {
                       	$namakat = $r['nama_kategori'];
                         $idkat = $r['id_kategori'];

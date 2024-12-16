@@ -26,7 +26,7 @@
                     $artikel = $this->model_app->view_where('subkategori',array('id_subkategori'=>$row['id_subkategori']))->num_rows();
                     echo "<tr><td>$no</td>
                               <td>$row[nama_subkategori]</td>
-                              <td><a target='_BLANK' href='".base_url()."kategori/detail/$row[subkategori_seo]'>kategori/detail/$row[subkategori_seo]</a></td>
+                              <td><a target='_BLANK' href='".base_url()."kategori/detailsub/$row[id_subkategori]'>kategori/detailsub/$row[id_subkategori]</a></td>
                               <td>$row[aktif]</td>
                               <td>$row[recomended]</td>
                            
