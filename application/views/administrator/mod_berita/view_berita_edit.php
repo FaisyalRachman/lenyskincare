@@ -11,7 +11,8 @@ echo "<table class='table table-sm table-borderless'>
         <input type='hidden' name='id' value='$rows[id_berita]'>
         <tr><th width='120px' scope='row'>Judul</th>    <td><input type='text' class='form-control' name='b' value='$rows[judul]' required></td></tr>
         <tr><th scope='row'>Sub Judul</th>              <td><input type='text' class='form-control' name='c' value='$rows[sub_judul]'></td></tr>
-        <tr><th scope='row'>Video Youtube</th>          <td><input type='text' class='form-control' name='d' value='$rows[youtube]' placeholder='Contoh link: http://www.youtube.com/embed/xbuEmoRWQHU'></td></tr>";
+        <tr><th scope='row'>Video Youtube</th>          <td><input type='text' class='form-control' name='d' value='$rows[youtube]' placeholder='Contoh link: http://www.youtube.com/embed/xbuEmoRWQHU'></td></tr>
+         <tr><th scope='row'>Meta Description</th>          <td><input type='text' class='form-control' name='m' value='$rows[meta_desc]' placeholder='Contoh : Ingin menjaga kekencangan kulit tanpa operasi? Yuk coba treatment IPL Rejuve! Baca di LenySkinCare'></td></tr>";
      echo "<tr><th scope='row'>Tag</th>                        <td><div class='checkbox-scroll'>";
           $_arrNilai = explode(',', $rows['tagvid']);
           foreach ($tag as $tag){
