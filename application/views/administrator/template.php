@@ -11,9 +11,8 @@ if ($this->session->level==''){
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title><?php echo $iden['nama_website']; ?></title>
-  <meta name="author" content="">
+  <meta name="author" content="primacomit.com">
   <!-- Font Awesome Icons -->
-  
   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin_mu/plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin_mu/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
@@ -26,18 +25,10 @@ if ($this->session->level==''){
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <style type="text/css">.checkbox-scroll { border:1px solid #ccc; width:100%; height: 114px; padding-left:8px; overflow-y: scroll; }</style>
-<script src="<?php echo base_url(); ?>asset/ckeditor/ckeditor.js"></script>
+  <!--<script src="asset/ckeditor/ckeditor.js"></script>-->
   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/admin_mu/plugins/daterangepicker/daterangepicker-bs3.css">
   <script type="text/javascript" src="<?php echo base_url(); ?>asset/admin_mu/plugins/daterangepicker/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-  <script type="text/javascript">jQuery.noConflict();</script>
-  <!-- =======================================================
-  * Template Name: KnightOne - v4.7.0
-  * Engine Framework : Codeigniter
-  * Development By : www.sookawebtarakan.com (faisyal rachman 082155573572) Jl. Yos Sudarso No.43 RT.07 Selumit , Tarakan Tengah - Kota Tarakan
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -65,7 +56,8 @@ if ($this->session->level==''){
           <ol class='breadcrumb float-sm-right'>
           <?php 
             if($this->uri->segment(2)!='home' AND $this->uri->segment(2)!=''){
-              echo "<li class='breadcrumb-item'><a href='".base_url().$this->uri->segment(1)."'>Home</a></li>";
+              echo "<li class='breadcrumb-item'><a href='".base_url().$this->uri->segment(1)."'>Home</a></li>
+                    <li class='breadcrumb-item active'>".$this->uri->segment(2)."</li>";
             }else{
               echo "<li class='breadcrumb-item'>Haloo, Selamat Datang Gan!</li>";
             }
@@ -95,17 +87,16 @@ if ($this->session->level==''){
 
   <!-- Main Footer -->
   <footer class="main-footer text-sm">
-    <strong>Copyright &copy; 2014-<?php echo date('Y'); ?> <a target='_BLANK' href="https://www.lenyskincare.co.id/"><?php echo $iden['nama_website']; ?></a>.</strong>
+    <strong>Copyright &copy; 2014-<?php echo date('Y'); ?> <a target='_BLANK' href="https://members.primacomit.com/"><?php echo $iden['nama_website']; ?></a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-    <a style='color:#cecece !important' href="<?php echo base_url().$this->uri->segment(1); ?>/upgrade"><b>Version</b> 1.b.0</a>
+    <a style='color:#cecece !important' href="<?php echo base_url().$this->uri->segment(1); ?>/upgrade"><b>Version</b> 3.0.0</a>
     </div>
   </footer>
 </div>
 <!-- ./wrapper -->
 <script src="<?php echo base_url(); ?>asset/admin_mu/plugins/daterangepicker/daterangepicker.js"></script>
 <script type="text/javascript">
-
 $('#rangepicker').daterangepicker();
 </script>
 <!-- REQUIRED SCRIPTS -->
@@ -169,7 +160,12 @@ $(document).ready(function(){
 <script src="<?php echo base_url(); ?>asset/admin_mu/dist/js/demo.js"></script>
 <!-- PAGE PLUGINS -->
 <script src="<?php echo base_url(); ?>asset/summernote/summernote-bs4.min.js"></script>
-
+<script>
+  $(function () {
+    // Summernote
+    $('#editor1').summernote()
+  })
+</script>
 
 <!-- jQuery Mapael -->
 <script src="<?php echo base_url(); ?>asset/admin_mu/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
@@ -217,10 +213,11 @@ $('ul.nav-treeview a').filter(function() {
 
 
 <?php if ($this->uri->segment('2')!='menuwebsite'){ ?>
-  <script>
-     CKEDITOR.replace( 'editor1' );
- </script>
-
+  <!--<script>
+    /* CKEDITOR.replace('editor1' ,{
+      filebrowserImageBrowseUrl : '<?php // echo base_url('asset/kcfinder'); ?>'
+    }); */
+  </script>-->
 <?php } ?>
 </body>
 </html>
